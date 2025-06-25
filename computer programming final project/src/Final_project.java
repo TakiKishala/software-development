@@ -1,11 +1,10 @@
 import java.util.Scanner;
 public class Final_project {
-
+//main method
     public static void main(String[] args) {
         mainMenu();
 
-
-    }
+    }//mainMenu method
     public static void mainMenu(){
 
 
@@ -27,6 +26,10 @@ public class Final_project {
             System.out.println("Thanks for using the Pet Chooser!");
             System.exit(0);
         }
+        else{
+            System.out.println("invalid input");
+            mainMenu();
+        }
 
     }
 
@@ -42,7 +45,7 @@ public class Final_project {
         System.out.println("|      Let's find the perfect pet for you.     |");
         System.out.println("+==============================================+");
         System.out.println("\t 1) Choose a pet based on your preferences.");
-        System.out.println("\t 2) We help you find the best fit for you. ");
+        System.out.println("\t 2) We help you find your best fit.");
         System.out.print("\n[Enter 1 or 2]:");
         int choice = input.nextInt();
 
@@ -74,25 +77,33 @@ public class Final_project {
             System.out.println("\t4) Fish");
             System.out.println("\t5) Rabbit");
             System.out.println("\t6) Other");
+            System.out.println("\t7)go back");
             System.out.print("Enter choice (1-6): ");
             petChoice = input.nextInt();
 
             if (petChoice == 1) {
                 dogChoice();
-            } else if (petChoice == 2) {
+            }
+            else if (petChoice == 2) {
                catChoice();
-            } else if (petChoice == 3) {
+            }
+            else if (petChoice == 3) {
                 birdChoice();
-            } else if (petChoice == 4) {
+            }
+            else if (petChoice == 4) {
                fishChoice();
-            } else if (petChoice == 5) {
+            }
+            else if (petChoice == 5) {
                 rabbitChoice();
-            } else {
+            }
+            else if(petChoice == 7)
+                petChooseHelperMenu();
+            else {
 
                 System.out.println("\nSorry we do not have other pet in storage for the moment.");
                 System.out.println("___________________________________________________________");
             }
-        } while (petChoice == 6);
+        } while (petChoice == 7);
 
     }
 
@@ -242,8 +253,7 @@ public class Final_project {
         System.out.println("----------------------------------------------------------------------------");
 
         mainMenu();
-
-
+        
     }
     public static void catChoice(){
         Scanner input = new Scanner(System.in);
